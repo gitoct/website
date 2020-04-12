@@ -15,9 +15,24 @@ document.getElementById("text").innerHTML = "Text added by JavaScript code";
   d3.selectAll("p").style("color", "red");
 </script>
 <p>Canary 1</p>
+<style>    
+    .line-chart    
+    {       
+        border: 1px solid lightgray;    
+    }
+</style>
+<svg></svg>
 <script>
 d3.csv("data/acnh.csv", function(data) {
     console.log(data);
 });
+    
+function drawChart(data){
+    var svgWidth = 600, svgHeight = 400;   
+    var margin = { top: 20, right: 20, bottom: 30, left: 50 };   
+    var width = svgWidth - margin.left - margin.right;   
+    var height = svgHeight - margin.top - margin.bottom;
+    var svg = d3.select('svg').attr("width", svgWidth).attr("height", svgHeight);
+}
 </script>
 
