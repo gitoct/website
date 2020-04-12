@@ -14,26 +14,24 @@
 document.getElementById("text").innerHTML = "Text added by JavaScript code";
   d3.selectAll("p").style("color", "red");
 </script>
-<p>Canary 3</p>
-<style>    
-    .line-chart    
-    {       
-        border: 1px solid lightgray;    
-    }
-</style>
-<svg></svg>
+<p>Canary 4</p>
+<div id="dataviz"></svg>
 <script>
-d3.csv("data/acnh.csv", function(data) {
-    console.log(data);
-    drawChart(data);
+var margin = {top: 10, right: 30, bottom: 30, left: 60},
+    width = 460 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#dataviz")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("data/acnh.csv", function(data){
+   console.log(data); 
 });
-    
-function drawChart(data){
-    var svgWidth = 600, svgHeight = 400;   
-    var margin = { top: 20, right: 20, bottom: 30, left: 50 };   
-    var width = svgWidth - margin.left - margin.right;   
-    var height = svgHeight - margin.top - margin.bottom;
-    var svg = d3.select('svg').attr("width", svgWidth).attr("height", svgHeight);
-}
 </script>
 
