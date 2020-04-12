@@ -14,7 +14,7 @@
 document.getElementById("text").innerHTML = "Text added by JavaScript code";
   d3.selectAll("p").style("color", "red");
 </script>
-<p>Canary 4</p>
+<p>Canary 5</p>
 <div id="dataviz"></div>
 <script>
 var margin = {top: 10, right: 30, bottom: 30, left: 60},
@@ -32,7 +32,7 @@ var svg = d3.select("#dataviz")
 
 d3.csv("data/acnh.csv", function(data){
    var x = d3.scaleTime()
-      .domain(d3.extent(data, function(d) { return d.date; }))
+      .domain(d3.extent(data, function(d) { return d.Date; }))
       .range([ 0, width ]);
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
@@ -40,7 +40,7 @@ d3.csv("data/acnh.csv", function(data){
 
     // Add Y axis
     var y = d3.scaleLinear()
-      .domain([0, d3.max(data, function(d) { return +d.value; })])
+      .domain([0, d3.max(data, function(d) { return +d.Price; })])
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
