@@ -16,9 +16,8 @@ document.getElementById("text").innerHTML = "Text added by JavaScript code";
 </script>
 <p>Canary updated</p>
 <script>
-d3.csv("data/acnh.csv")
-  .get(function(data) {
-        console.log(data);
-  });
+d3.csv("data/acnh.csv", function(data) {
+    console.log(data);
+});
 </script>
 
