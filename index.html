@@ -14,7 +14,7 @@
 document.getElementById("text").innerHTML = "Text added by JavaScript code";
   d3.selectAll("p").style("color", "red");
 </script>
-<p>Canary 2</p>
+<p>Canary 3</p>
 <style>    
     .line-chart    
     {       
@@ -25,6 +25,7 @@ document.getElementById("text").innerHTML = "Text added by JavaScript code";
 <script>
 d3.csv("data/acnh.csv", function(data) {
     console.log(data);
+    drawChart(data);
 });
     
 function drawChart(data){
