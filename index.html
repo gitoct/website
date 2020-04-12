@@ -15,12 +15,10 @@ document.getElementById("text").innerHTML = "Text added by JavaScript code";
   d3.selectAll("p").style("color", "red");
 </script>
 <script>
-d3.csv("data/acnh.csv", function(data) {
-    for (var i = 0; i < data.length; i++) {
-        console.log(data[i].Date);
-        console.log(data[i].Price);
-    }
-});
+d3.csv("data/acnh.csv")
+  .get(function(data) {
+        console.log(data);
+  });
 </script>
 <p>Change canary</p>
 
