@@ -4,44 +4,8 @@
   <script src="https://www.gstatic.com/charts/loader.js"></script>
   <script>
     google.charts.load('current', {packages: ['line']});
-    //google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChart);
     
-    var queryOptions = {
-    csvColumns: ['date', 'number', 'number' /* Or whatever the columns in the CSV file are */],
-    csvHasHeader: false /* This should be false if your CSV file doesn't have a header */
-    }
-/* csvUrl is the path to your csv */    
-var query = new google.visualization.Query("data/acnh.csv", queryOptions);
-query.send(handleQueryResponse);
-
-function handleQueryResponse(response) {
-
-    if (response.isError()) {
-        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
-        return;
-    }
-
-    var data = response.getDataTable();
-  
-  var options = {
-        chart: {
-          title: 'Follow the Stalk',
-          subtitle: 'buy low, sell high'
-        },
-        lineWidth: 5,
-        width: 900,
-        height: 500
-      };
-
-      var chart = new google.charts.Line(document.getElementById('linechart_material'));
-
-      chart.draw(data, google.charts.Line.convertOptions(options));
-
-    //var chart = new google.visualization.ColumnChart(document.getElementById('your div'));
-    // Draw your chart with the data table here.
-    // chart.draw(view, queryOptions);
-}
-/*
     function drawChart() {
       var data = new google.visualization.DataTable();
       data.addColumn('date', 'Date');
@@ -75,7 +39,7 @@ function handleQueryResponse(response) {
       var chart = new google.charts.Line(document.getElementById('linechart_material'));
 
       chart.draw(data, google.charts.Line.convertOptions(options));
-    }*/
+    }
   </script>
 </head>
 <body>
