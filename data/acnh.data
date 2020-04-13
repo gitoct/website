@@ -1,0 +1,16 @@
+[
+        [ {label: 'Date', id: 'Date', type: 'date'},
+          {label: 'Price', id: 'Price', type: 'number'},
+          {label: 'Purchase Price', id: 'PurchasePrice', type: 'number'} ],
+        [new Date(2020, 3, 6, 8), 79, 90],
+        [new Date(2020, 3, 6, 13), 75, 90],
+        [new Date(2020, 3, 7, 8), 117, 90],
+        [new Date(2020, 3, 7, 13), 115, 90],
+        [new Date(2020, 3, 8, 8), 155, 90],
+        [new Date(2020, 3, 8, 13), 162, 90],
+        [new Date(2020, 3, 9, 8), 153, 90],
+        [new Date(2020, 3, 9, 13), 83, 90],
+        [new Date(2020, 3, 10, 13), 87, 90],
+        [new Date(2020, 3, 11, 13), 70, 90],
+        [new Date(2020, 3, 12, 13), 0, 100]
+      ]
